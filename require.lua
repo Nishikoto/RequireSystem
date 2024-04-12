@@ -1,5 +1,5 @@
-local nishi = {}
-function nishi.require(resource, module)
+-- local nishi = {}
+function nRequire(resource, module)
     local _module = LoadResourceFile(resource or GetCurrentResourceName(), ('%s.lua'):format(module));
 
     if (type(_module) ~= 'string') then
@@ -24,6 +24,6 @@ function nishi.require(resource, module)
     return func;
 end
 
-exports('nrequire', function()
-    return nishi;
-end);
+-- exports('getObject', function()
+--     return nishi;
+-- end)

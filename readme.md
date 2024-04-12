@@ -24,12 +24,19 @@ return myFirstFunction
 ```
 
 And now in a file that you declare in your fxmanifest, called the system like that.
+`fxmanifest.lua`
+```lua
+fx_version 'cerulean'
+games {'gta5', 'rdr3}
+
+shared_script '@RequireSystem/require.lua'
+shared_script 'server.lua'
+```
+
 `server.lua`
 ```lua
-RequireSystem = exports['RequireSystem']:nrequire();
-
-local myTable = RequireSystem.require('yourScriptName', 'myModule');
-local myFunction = RequireSystem.require('yourScriptName', 'myModule_2');
+local myTable = nRequire('yourScriptName', 'myModule');
+local myFunction = nRequire('yourScriptName', 'myModule_2');
 
 myTable.test() --output: Coucou justgod!
 myFunction('Nishi', 'Koto', 'args1', 'args2', 'args3') --output: myFirstFunction say: [param1: Nishi|param2: Koto|args: args1 args2 args3]
